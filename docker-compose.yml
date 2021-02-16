@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  php-kata-scaffolding:
+    build:
+      context: build
+    container_name: php-kata-scaffolding
+    hostname: php
+    volumes:
+      - .:/srv/php-kata-scaffolding:delegated
