@@ -1,10 +1,10 @@
 {
-    "description": "A basic PHP scaffolding with Docker",
+    "description": "A basic PHP Kata Scaffolding",
     "type": "project",
-    "homepage": "https://php-scaffolding.chemaclass.com/",
     "license": "MIT",
     "keywords": [
         "php",
+        "katas",
         "scaffolding"
     ],
     "require": {
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Kata\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "KataTests\\": "tests/"
         }
     },
     "scripts": {

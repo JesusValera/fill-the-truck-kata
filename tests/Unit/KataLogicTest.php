@@ -2,30 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\ExampleModule;
+namespace KataTests\Unit;
 
-use App\ExampleModule\ExampleModuleFacade;
-use App\ExampleModule\ExampleModuleFactory;
 use Generator;
+use Kata\KataLogic;
 use PHPUnit\Framework\TestCase;
 
-final class ExampleModuleFacadeTest extends TestCase
+final class KataLogicTest extends TestCase
 {
     /**
-     * @test
-     *
-     * @dataProvider adderDataProvider
+     * @dataProvider addDataProvider
      */
-    public function itCanAdd(int $expected, array $numbers): void
+    public function testAdd(int $expected, array $numbers): void
     {
-        $facade = new ExampleModuleFacade(
-            new ExampleModuleFactory()
-        );
+        $kataLogic = new KataLogic();
 
-        self::assertSame($expected, $facade->add(...$numbers));
+        self::assertSame($expected, $kataLogic->add(...$numbers));
     }
 
-    public function adderDataProvider(): Generator
+    public function addDataProvider(): Generator
     {
         yield 'when no numbers, the result is zero' => [
             'expected' => 0,
