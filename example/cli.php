@@ -4,7 +4,10 @@
 declare(strict_types=1);
 
 use TruckKata\KataLogic;
+use TruckKata\ValueObject\Box;
 use TruckKata\ValueObject\Truck;
+use TruckKata\ValueObject\TruckSize;
+use TruckKata\ValueObject\UnitPerBox;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -22,9 +25,9 @@ require dirname(__DIR__) . '/vendor/autoload.php';
  */
 $kataLogic = new KataLogic();
 
-$boxes = [1, 2, 3];
-$unitsPerBox = [3, 2, 1];
-$truckSize = 3;
+$boxes = [new Box(1), new Box(2), new Box(3)];
+$unitsPerBox = [new UnitPerBox(3), new UnitPerBox(2), new UnitPerBox(1)];
+$truckSize = new TruckSize(3);
 
 $truck = new Truck($boxes, $unitsPerBox, $truckSize);
 
