@@ -23,7 +23,7 @@ final class TruckSize
 
     private function guardSize(int $size): void
     {
-        if ($size < 0 || $size > (10 ** 8)) {
+        if ($size < 1 || $size > (10 ** 8)) {
             throw new RuntimeException('1 <= truckSize <= 10^8');
         }
     }

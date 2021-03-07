@@ -23,7 +23,7 @@ final class Box
 
     private function guardProductNumber(int $productNumber): void
     {
-        if ($productNumber < 0 || $productNumber > (10 ** 7)) {
+        if ($productNumber < 1 || $productNumber > (10 ** 7)) {
             throw new RuntimeException('1 <= boxes[i] <= 10^7');
         }
     }

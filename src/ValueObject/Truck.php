@@ -32,11 +32,17 @@ final class Truck
         $this->truckSize = $truckSize;
     }
 
+    /**
+     * @return Box[]
+     */
     public function boxes(): array
     {
         return $this->boxes;
     }
 
+    /**
+     * @return UnitPerBox[]
+     */
     public function unitsPerBox(): array
     {
         return $this->unitsPerBox;
@@ -51,7 +57,7 @@ final class Truck
     {
         $boxesSize = count($boxes);
 
-        if ($boxesSize <= 1 || $boxesSize >= (10 ** 5)) {
+        if ($boxesSize < 1 || $boxesSize > (10 ** 5)) {
             throw new RuntimeException('1 <= |boxes| <= 10^5');
         }
     }

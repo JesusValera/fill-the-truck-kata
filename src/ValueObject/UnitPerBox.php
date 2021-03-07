@@ -23,7 +23,7 @@ final class UnitPerBox
 
     private function guardProductNumber(int $productNumber): void
     {
-        if ($productNumber < 0 || $productNumber > (10 ** 5)) {
+        if ($productNumber < 1 || $productNumber > (10 ** 5)) {
             throw new RuntimeException('1 <= boxes[i] <= 10^5');
         }
     }
