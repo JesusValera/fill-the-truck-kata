@@ -1,14 +1,14 @@
 {
+    "name": "jesusvalera/truck-kata",
     "description": "A basic PHP Kata Scaffolding",
     "type": "project",
     "license": "MIT",
     "keywords": [
         "php",
-        "katas",
-        "scaffolding"
+        "katas"
     ],
     "require": {
-        "php": ">=8.0"
+        "php": ">=7.4"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2",
@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kata\\": "src/"
+            "TruckKata\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "KataTests\\": "tests/"
+            "TruckKataTests\\": "tests/"
         }
     },
     "scripts": {

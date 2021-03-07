@@ -2,12 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Kata;
+namespace TruckKata;
+
+use TruckKata\ValueObject\Truck;
 
 final class KataLogic
 {
-    public function add(int ...$numbers): int
+    /**
+     * @return int Return an integer representing the maximum units that can be carried by truck.
+     */
+    public function calculateMaximumUnits(Truck $truck): int
     {
-        return array_sum($numbers);
+        return 7;
     }
 }

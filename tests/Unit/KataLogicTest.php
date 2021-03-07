@@ -2,44 +2,24 @@
 
 declare(strict_types=1);
 
-namespace KataTests\Unit;
+namespace TruckKataTests\Unit;
 
-use Generator;
-use Kata\KataLogic;
 use PHPUnit\Framework\TestCase;
+use TruckKata\KataLogic;
+use TruckKata\ValueObject\Truck;
 
 final class KataLogicTest extends TestCase
 {
-    /**
-     * @dataProvider addDataProvider
-     */
-    public function testAdd(int $expected, array $numbers): void
+    public function testCalculateMaximumUnitsExample1(): void
     {
         $kataLogic = new KataLogic();
 
-        self::assertSame($expected, $kataLogic->add(...$numbers));
-    }
+        $boxes = [1, 2, 3];
+        $unitsPerBox = [3, 2, 1];
+        $truckSize = 3;
 
-    public function addDataProvider(): Generator
-    {
-        yield 'when no numbers, the result is zero' => [
-            'expected' => 0,
-            'numbers' => [],
-        ];
+        $truck = new Truck($boxes, $unitsPerBox, $truckSize);
 
-        yield 'when a single number, the result is the same number' => [
-            'expected' => 1,
-            'numbers' => [1],
-        ];
-
-        yield 'when two numbers, the result is the sum of both' => [
-            'expected' => 3,
-            'numbers' => [1, 2],
-        ];
-
-        yield 'when multiple numbers, the result is the sum of all of them' => [
-            'expected' => 10,
-            'numbers' => [1, 2, 3, 4],
-        ];
+        self::assertSame(7, $kataLogic->calculateMaximumUnits($truck));
     }
 }
