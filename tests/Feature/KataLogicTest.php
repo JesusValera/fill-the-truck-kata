@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TruckKataTests\Unit;
+namespace TruckKataTests\Feature;
 
 use PHPUnit\Framework\TestCase;
 use TruckKata\KataLogic;
